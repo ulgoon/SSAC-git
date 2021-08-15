@@ -6,7 +6,7 @@ marp: true
 
 ## SSAC
 
-### Python을 활용한 비즈니스 빅데이터 분석가 양성 과정
+### Python을 활용한 비즈니스 빅데이터 분석가 양성과정
 
 ---
 
@@ -14,7 +14,7 @@ marp: true
 paginate: true
 theme: default
 size: 16:9
-footer : Python을 활용한 비즈니스 빅데이터 분석가 양성 과정,  Wooyoung Choi, 2021
+footer : Python을 활용한 비즈니스 빅데이터 분석가 양성과정,  Wooyoung Choi, 2021
 -->
 
 ## 최우영
@@ -304,7 +304,7 @@ Page 3
 
 ---
 
-![height:200px](https:git-scm.com/images/logos/downloads/Git-Logo-2Color.png)
+![height:200px](https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg)
 
 ---
 
@@ -372,7 +372,7 @@ Page 3
 
 ---
 
-![height:400px](https:git-scm.com/book/en/v2/images/data-model-3.png)
+![height:400px](https://git-scm.com/book/en/v2/images/data-model-3.png)
 
 - ref: [git internals - git objects](https:git-scm.com/book/en/v2/Git-Internals-Git-Objects)
 
@@ -380,7 +380,7 @@ Page 3
 
 ## git Process Flow and Command
 
-![height:500px](https:thepracticaldev.s3.amazonaws.com/i/128hsgntnsu9bww0y8sz.png)
+![height:500px](./img/gitprocess.jpg)
 
 ---
 
@@ -682,111 +682,6 @@ key.pem
 
 ---
 
-## My First Github Pages
-
-github 저장소를 활용해 정적인 사이트 호스팅이 가능
-
-`username`.github.io
-http://tech.kakao.com/
-https://spoqa.github.io/
-
----
-
-### sample index page
-
-After create new repo throuch github,
-
-`$ git clone https://github.com/username/username.github.io.git`
-
-Create New file `index.html`
-
-`$ git add .`
-`$ git commit -m "first page"`
-`$ git push origin master`
-
----
-
-### sample index page
-
-```html
-<!doctype html>
-<html>
- <head>
-  <meta charset="utf-8">
-  <title>My first gh page</title>
- </head>
- <body>
-  <h1>Home</h1>
-  <p>Hello, there!</p>
- </body>
-</html>
-```
-
----
-
-### Static Site Generator
-
-- [Jekyll](https://jekyllrb.com/): Ruby 기반 정적인 블로그 생성기
-	- 설치와 사용이 쉬움
-	- 사용자가 많았음 
-- [Hugo](https://gohugo.io/): Golang 기반 정적인 블로그 생성기
-	- 빠른 속도로 사이트를 생성
-	- 사용자 증가 중
-- [Hexo](https://hexo.io/): Node.js 기반 정적인 블로그 생성기
-	- Node.js를 안다면 커스터마이즈가 쉬움
-	- 빠른 속도로 사용자 증가 중
-
-**Recommand**
-`Hexo` > `Jekyll` > `Hugo`
-
----
-
-## Let's use Hexo
-
-[![asciicast height:400px](https://asciinema.org/a/233626.svg)](https://asciinema.org/a/233626)
-
----
-
-### Requirements
-
-1. git
-2. node.js(https://nodejs.org/en/)
-
-`$ npm install -g hexo-cli`
-
----
-
-## Init hexo project
-
-```shell
-$ hexo init <folder>
-$ cd <folder>
-$ npm install
-```
-
-## clean && generate static files
-
-`$ hexo clean && hexo generate`
-
-## Run hexo server
-
-`$ hexo server`
-
----
-
-## deploy
-
-`$ npm install hexo-deployer-git --save`
-
-```yaml
-deploy:
-  type: git
-  repo: <repository url>  branch: [branch] #published
-  message:
-```
-
----
-
 ## .gitignore and .gitattributes
 
 ### .gitignore: 특정파일 추적을 하고 싶지 않을 경우
@@ -810,15 +705,172 @@ deploy:
 
 ---
 
+## Branch
+
+![](https:wac-cdn.atlassian.com/dam/jcr:389059a7-214c-46a3-bc52-7781b4730301/hero.svg?cdnVersion=1389)
+
+---
+
+## Branch
+
+- 분기점을 생성하여 독립적으로 코드를 변경할 수 있도록 도와주는 모델
+
+`master`
+
+```python
+print('hello' + ' ' + 'world')
+```
+
+`develop`
+
+```python
+words = ['world', 'hello']
+print(' '.join(words[:-1]))
+```
+
+---
+
+## Branch(1)
+
+Show available local branch
+`$ git branch`
+
+Show available remote branch
+`$ git branch -r`
+
+Show available All branch
+`$ git branch -a`
+
+---
+
+## Branch(2)
+
+Create branch
+`$ git branch stem`
+
+Checkout branch
+`$ git checkout stem`
+
+Create & Checkout branch
+`$ git checkout -b new-stem`
+
+make changes inside readme.md
+`$ git commit -a -m 'edit readme.md'`
+`$ git checkout master`
+
+merge branch
+`$ git merge stem`
+
+---
+
+## Branch(3)
+
+delete branch
+`$ git branch -D stem`
+
+push with specified remote branch
+`$ git push origin stem`
+
+see the difference between two branches
+`$ git diff master stem`
+
+---
+
+## Practice(1)
+
+- Spiderman.md를 생성하고 다음의 정보를 배역을 맡은 배우별로 브랜치를 생성하여 이를 시각화 하세요.
+- 완결된 브랜치는 master 브랜치로 merge 해야 합니다.
+- 각 commit은 개봉연도 순서대로 존재해야 합니다.
+- `AndrewGarfield` 브랜치는 master의 첫 commit 에서 `TobeyMaguire` 브랜치와 함께 시작해야 합니다.(리부트이므로..)
+- Format
+
+```text
+# {Movie Name}
+- Year:
+- Name:
+```
+
+---
+
+- `TobeyMaguire` branch
+
+```text
+# Spider-Man 1
+- Year: 2002
+- Name: Peter Benjamin Parker
+
+# Spider-Man 2
+- Year: 2004
+- Name: Peter Benjamin Parker
+
+# Spider-Man 3
+- Year: 2007
+- Name: Peter Benjamin Parker
+```
+
+---
+
+- `AndrewGarfield` branch
+
+```text
+# Amazing Spider-Man 1
+- Year: 2012
+- Name: Peter Benjamin Parker
+
+# Amazing Spider-Man 2
+- Year: 2014
+- Name: Peter Benjamin Parker
+```
+
+---
+
+- `Tom Holland` branch
+
+```text
+# Captain America: Civil War
+- Year: 2016
+- Name: Peter Benjamin Parker
+
+# Spider-Man: Home Coming
+- Year: 2017
+- Name: Peter Benjamin Parker
+
+# Avengers: Infinity war
+- Year: 2018
+- Name: Peter Benjamin Parker
+
+# Avengers: Endgame
+- Year: 2019
+- Name: Peter Benjamin Parker
+
+# Spider-Man: Far From Home
+- Year: 2019
+- Name: Peter Benjamin Parker
+```
+
+---
+
+### Additional Practice
+
+- Venom branch
+- Into the Spider-verse branch(Miles Morales)
+
+---
+
 ## Final Practice
 
 ### 새로운 repository를 생성(이름은 자유)하여 다음 과제 중 둘 이상을 수행하세요.
 
-1. (필수)README.md, .gitignore, LICENSE 작성
-2. (필수)사용자의 입력(이름(Firstname Lastname), 메일주소(username@domain.com), 전화번호(010.0000.0000 (.-₩b)))을 받아 users.csv 에 입력하는 get_user_info.{}
-3. users.csv의 메일주소에서 도메인을 분리하는 get_domain.{}
-4. users.csv의 전화번호에서 특수문자를 -로 통일하는 clense_phonenum.{}
-5. users.csv의 이름에서 겹치는 Lastname의 수를 출력하는 lastname_stats.{}
+1. 사용자의 입력(1~3000 사이의 정수)년도가 윤년인지 알려주는 function
+2. ethiopian multiplication
+3. fibonacci sequence(recursion)
+4. fibonacci sequence(with memoization)
+5. fibonacci sequence(with binet's formula)
+
+#### 조건
+
+1. 하나의 파일에 작업해야 함
+2. 작업 시 브랜치를 생성하여 작업해야 함
 
 ---
 
@@ -830,7 +882,7 @@ deploy:
 - git의 구성요소와 process 실습
 - commit convention 습관화
 - repository 필수 요소의 작성
-- github pages를 이용한 github blog 만들기
+- branch 사용법
 
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,800" rel="stylesheet">
 <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
