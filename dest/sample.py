@@ -5,21 +5,21 @@
 # 
 # [Get data from starbucks](https://www.starbucks.co.kr/store/getStore.do?r=VWW6MBSUM0)
 
-# In[ ]:
+# In[1]:
 
 
 import requests
 from bs4 import BeautifulSoup
 
 
-# In[ ]:
+# In[2]:
 
 
 response = requests.get('https://www.google.com/')
 response.status_code
 
 
-# In[ ]:
+# In[3]:
 
 
 print(input('Enter some number:'))
@@ -30,18 +30,11 @@ print(input('Enter some number:'))
 # 
 # $y=x+1$
 
-# In[ ]:
+# In[4]:
 
 
-while True:
-    print('hello')
-
-
-# In[ ]:
-
-
-for i in range(30):
-    print(i)
+for j in range(10):
+    print(j)
 
 
 # In[ ]:
