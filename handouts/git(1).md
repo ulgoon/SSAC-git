@@ -779,9 +779,9 @@ see the difference between two branches
 ## Practice(1)
 
 - Spiderman.md를 생성하고 다음의 정보를 배역을 맡은 배우별로 브랜치를 생성하여 이를 시각화 하세요.
-- 완결된 브랜치는 master 브랜치로 merge 해야 합니다.
+- 완결된 브랜치는 main 브랜치로 merge 해야 합니다.
 - 각 commit은 개봉연도 순서대로 존재해야 합니다.
-- `AndrewGarfield` 브랜치는 master의 첫 commit 에서 `TobeyMaguire` 브랜치와 함께 시작해야 합니다.(리부트이므로..)
+- `AndrewGarfield` 브랜치는 main의 첫 commit 에서 `TobeyMaguire` 브랜치와 함께 시작해야 합니다.(리부트이므로..)
 - Format
 
 ```text
